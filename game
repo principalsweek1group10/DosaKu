@@ -56,11 +56,14 @@ public class sudoku extends JFrame implements ActionListener{
 			remove(item3);
 			remove(item4);
 			remove(exit);
-			difficulty();		
+			difficulty();	
+			revalidate();
 		}
 		
 		public void difficulty(){
-
+		
+		setSize(0,0);
+		setSize(500,500);
 		item5 = new JButton();
 		item5.setText("Easy");
 		item5.setBounds(100, 190, 60, 30);
@@ -79,6 +82,7 @@ public class sudoku extends JFrame implements ActionListener{
 		item7.addActionListener(this);
 		add(item7);
 		
+		revalidate();
 	}			
 		
 	}
