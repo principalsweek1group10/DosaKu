@@ -12,63 +12,41 @@ public class sudoku extends JFrame implements ActionListener{
 	private JButton item6;
 	private JButton item7;
 	private JButton exit;
-
+	private JButton back;
+	public JFrame a;
+	public JFrame m;
+	
 	public sudoku(){
 		super("Sudoku");
-		
 		setLayout(new FlowLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500,500);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		menu();
+	}
 		
-		item1 = new JButton();
-		item1.setText("New Game");
-		item1.setBounds(100, 190, 60, 30);
-		item1.addActionListener(this);
-		add(item1);
 		
-		item2 = new JButton();
-		item2.setText("Leaderboards");
-		item2.setBounds(200, 190, 60, 30);
-		add(item2);
-		
-		item3 = new JButton();
-		item3.setText("Rules");
-		item3.setBounds(300, 190, 60, 30);
-		add(item3);
-		
-		item4 = new JButton();
-		item4.setText("Feedback");
-		item4.setBounds(300, 190, 60, 30);
-		add(item4);
-		
-		exit = new JButton();
-		exit.setText("Exit");
-		exit.setBounds(100, 190, 60, 30);
-		exit.addActionListener(this);
-		add(exit);
-		
+	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == item1){
-
+			
 			remove(item1);
 			remove(item2);
 			remove(item3);
 			remove(item4);
 			remove(exit);
-			difficulty();	
-			revalidate();
+			difficulty();
+			revalidate();			
 		}
-		else if (e.getSource() == item3){		//clicking the rule button
+		else if (e.getSource() == item3){
 			remove(item1);
 			remove(item2);
 			remove(item3);
 			remove(item4);
 			remove(exit);
 			rules();
+			
 			revalidate();
 		}
-		
 		else if (e.getSource() == item5){
 			add(new ImagePanel(new ImageIcon("sudoku.png").getImage()));
 			remove(item5);
@@ -93,10 +71,64 @@ public class sudoku extends JFrame implements ActionListener{
 			revalidate();
 			add(exit);
 		}
+		else if (e.getSource() == back){
+			a.dispose();
+			menu();
+		}
+		else if (e.getSource() == exit){
+			System.exit(0);
+		}
+		
 	}
+	
+	public void menu(){
+		m = new JFrame("test");
+		m.setVisible(true);
+		m.setLayout(new FlowLayout());
+		m.setSize(500,500);
+		m.dispose();
 
+		item1 = new JButton();
+		item1.setText("New Game");
+		item1.setBounds(100, 190, 60, 30);
+		item1.addActionListener(this);
+		add(item1);
+		
+		item2 = new JButton();
+		item2.setText("Leaderboards");
+		item2.setBounds(200, 190, 60, 30);
+		add(item2);
+		
+		item3 = new JButton();
+		item3.setText("Rules");
+		item3.setBounds(300, 190, 60, 30);
+		item3.addActionListener(this);
+		add(item3);
+		
+		item4 = new JButton();
+		item4.setText("Feedback");
+		item4.setBounds(300, 190, 60, 30);
+		add(item4);
+		
+		exit = new JButton();
+		exit.setText("Exit");
+		exit.setBounds(100, 190, 60, 30);
+		exit.addActionListener(this);
+		add(exit);
+		
+		back = new JButton();
+		back.setText("Back");
+		back.setBounds(100, 190, 60, 30);
+		back.addActionListener(this);
+		
+		
+		
+		revalidate();
+	
+	}
+	
 	public void difficulty(){
-
+		
 		setSize(0,0);
 		setSize(500,500);
 		item5 = new JButton();
@@ -104,28 +136,36 @@ public class sudoku extends JFrame implements ActionListener{
 		item5.setBounds(100, 190, 60, 30);
 		item5.addActionListener(this);
 		add(item5);
-
+		
 		item6 = new JButton();
 		item6.setText("Medium");
 		item6.setBounds(200, 190, 60, 30);
 		item6.addActionListener(this);
 		add(item6);
-
+		
 		item7 = new JButton();
 		item7.setText("Hard");
 		item7.setBounds(100, 190, 60, 30);
 		item7.addActionListener(this);
 		add(item7);
-
-		revalidate();
-	}	
-
-	public void rules(){
-		setSize(0,0);
-		setSize(500,500);
-		add(new ImagePanel(new ImageIcon("rules.png").getImage()));
-		add(exit);
 		
+		revalidate();
+		
+		
+	}
+	
+	public void rules(){
+		a = new JFrame();
+		a.setVisible(true);
+		a.setLayout(new FlowLayout());
+		a.setSize(500,500);
+		a.add(new ImagePanel(new ImageIcon("rules.png").getImage()));
+		a.add(back);
+	}
+	
+	public static void main (String[] args){
+		sudoku game = new sudoku();
+		game.setVisible(true);
 	}
 
 }
