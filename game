@@ -1,0 +1,52 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class sudoku extends JFrame implements ActionListener{
+	private JButton item1;
+	private JButton item2;
+	private JButton item3;
+	private JButton item4;
+	private JButton item5;
+	private JButton item6;
+	private JButton item7;
+	private JButton exit;
+
+	public sudoku(){
+		super("Sudoku");
+		
+		setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(500,500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		item1 = new JButton();
+		item1.setText("New Game");
+		item1.setBounds(100, 190, 60, 30);
+		item1.addActionListener(this);
+		add(item1);
+		
+		item2 = new JButton();
+		item2.setText("Leaderboards");
+		item2.setBounds(200, 190, 60, 30);
+		add(item2);
+		
+		item3 = new JButton();
+		item3.setText("Rules");
+		item3.setBounds(300, 190, 60, 30);
+		add(item3);
+		
+		item4 = new JButton();
+		item4.setText("Feedback");
+		item4.setBounds(300, 190, 60, 30);
+		add(item4);
+		
+		exit = new JButton();
+		exit.setText("Exit");
+		exit.setBounds(100, 190, 60, 30);
+		exit.addActionListener(this);
+		add(exit);
+		
+		
+	}
