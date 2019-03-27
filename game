@@ -48,41 +48,41 @@ public class sudoku extends JFrame implements ActionListener{
 		exit.addActionListener(this);
 		add(exit);
 		
-		public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == item1){
-			
-			remove(item1);
-			remove(item2);
-			remove(item3);
-			remove(item4);
-			remove(exit);
-			difficulty();	
-			revalidate();
-		}
-		
-		public void difficulty(){
-		
-		setSize(0,0);
-		setSize(500,500);
-		item5 = new JButton();
-		item5.setText("Easy");
-		item5.setBounds(100, 190, 60, 30);
-		item5.addActionListener(this);
-		add(item5);
-		
-		item6 = new JButton();
-		item6.setText("Medium");
-		item6.setBounds(200, 190, 60, 30);
-		item6.addActionListener(this);
-		add(item6);
-		
-		item7 = new JButton();
-		item7.setText("Hard");
-		item7.setBounds(100, 190, 60, 30);
-		item7.addActionListener(this);
-		add(item7);
-		
+	public void actionPerformed(ActionEvent e) {
+	if (e.getSource() == item1){
+
+		remove(item1);
+		remove(item2);
+		remove(item3);
+		remove(item4);
+		remove(exit);
+		difficulty();	
 		revalidate();
+	}
+
+	public void difficulty(){
+
+	setSize(0,0);
+	setSize(500,500);
+	item5 = new JButton();
+	item5.setText("Easy");
+	item5.setBounds(100, 190, 60, 30);
+	item5.addActionListener(this);
+	add(item5);
+
+	item6 = new JButton();
+	item6.setText("Medium");
+	item6.setBounds(200, 190, 60, 30);
+	item6.addActionListener(this);
+	add(item6);
+
+	item7 = new JButton();
+	item7.setText("Hard");
+	item7.setBounds(100, 190, 60, 30);
+	item7.addActionListener(this);
+	add(item7);
+
+	revalidate();
 	}			
 		
-	}
+}
