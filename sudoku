@@ -68,6 +68,31 @@ public class sudoku extends JFrame implements ActionListener{
 			rules();
 			revalidate();
 		}
+		
+		else if (e.getSource() == item5){
+			add(new ImagePanel(new ImageIcon("sudoku.png").getImage()));
+			remove(item5);
+			remove(item6);
+			remove(item7);
+			add(exit);
+			revalidate();
+		}
+		else if (e.getSource() == item6){
+			add(new ImagePanel(new ImageIcon("sudoku.png").getImage()));
+			remove(item5);
+			remove(item6);
+			remove(item7);
+			add(exit);
+			revalidate();
+		}
+		else if (e.getSource() == item7){
+			add(new ImagePanel(new ImageIcon("sudoku.png").getImage()));
+			remove(item5);
+			remove(item6);
+			remove(item7);
+			revalidate();
+			add(exit);
+		}
 	}
 
 	public void difficulty(){
